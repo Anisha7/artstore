@@ -11,7 +11,7 @@ const Navbar = () => {
                 <li>
                 <FontAwesomeIcon
                 icon={ faBookOpen }
-                size="1x"
+                size="2x"
                 />
                 </li>
                 <li className="logo">
@@ -20,7 +20,7 @@ const Navbar = () => {
                 <li>
                 <FontAwesomeIcon
                 icon={ faShoppingCart }
-                size="1x"
+                size="2x"
                 />
                 </li>
             </ul>

@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt&display=swap');
+:root {
+  --color-blue: #244E62;
+  --color-black: #282828;
+  --color-white: #F9F9F9;
+}
 .App {
   text-align: center;
   margin: 0 100px;
+  font-family: 'Prompt', sans-serif;
 }
 
 .App-logo {

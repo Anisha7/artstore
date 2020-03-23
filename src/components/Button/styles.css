@@ -1,0 +1,22 @@
+.button {
+    width: 148px;
+    border: 1px solid var(--color-blue);
+    font-size: 18px;
+    color: var(--color-blue);
+    padding: 10px 0;
+    background: none;
+    margin: 10px;
+    font-weight: 400;
+}
+
+.big {
+    width: 217px;
+    height: 46px;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.filled {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}
