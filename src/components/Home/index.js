@@ -35,7 +35,7 @@ const Home = () => {
       </div>
       <div className="art">
         {art.map(({ img, price, title }) => (
-          <ArtItem image={img} price={price} title={title}></ArtItem>
+          <ArtItem key={title} image={img} price={price} title={title}></ArtItem>
         ))}
       </div>
     </div>

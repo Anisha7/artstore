@@ -16,7 +16,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-self: center;
-    padding: 100px;
+    padding-top: 100px;
 }
 
 @media only screen and (max-width: 650px) {

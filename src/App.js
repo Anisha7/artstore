@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 
-import './App.css';
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Navbar />
-        <Home />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Navbar />
+    <Home />
+    <Footer />
+  </div>
+);
 
 export default App;
