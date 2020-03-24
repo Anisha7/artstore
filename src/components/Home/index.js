@@ -3,49 +3,12 @@ import { withRouter } from "react-router";
 
 import Button from "../Button";
 import ArtItem from "./components/ArtItem";
+
+import { artStoreData } from "../../data"
 import "./styles.css";
 
-import translation from "../../assets/art/translation.jpeg";
-import navratri from "../../assets/art/Navratri.jpg";
-import shackles from "../../assets/art/shackles.jpg";
-import passion from "../../assets/art/Passion.jpg";
-import loss from "../../assets/art/Loss.jpg";
-import ganesha from "../../assets/art/ganesha.jpg";
-
 const Home = ({ history }) => {
-  const art = [
-    {
-      img: passion,
-      price: "$300",
-      title: "Passion"
-    },
-    {
-      img: loss,
-      price: "$500",
-      title: "Loss"
-    },
-    {
-      img: ganesha,
-      price: "$250",
-      title: "Ganesha"
-    },
-    {
-      img: translation,
-      price: "$300",
-      title: "Translation"
-    },
-    {
-      img: shackles,
-      price: "$350",
-      title: "Shackles"
-    },
-    {
-      img: navratri,
-      price: "$250",
-      title: "Navratri"
-    }
-  ];
-
+  
   return (
     <div className="home">
       <div className="tbd"></div>
@@ -56,8 +19,9 @@ const Home = ({ history }) => {
         </Button>
       </div>
       <div className="art">
-        {art.map(({ img, price, title }) => (
+        {artStoreData.map(({ img, price, title, id }) => (
           <ArtItem
+            id={id}
             key={title}
             image={img}
             price={price}
