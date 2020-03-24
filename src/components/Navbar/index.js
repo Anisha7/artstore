@@ -1,10 +1,11 @@
 import React from 'react';
+import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles.css";
 
-const Navbar = () => {
+const Navbar = ({ history }) => {
     return (
         <div className="navbar">
             <ul>
@@ -14,7 +15,7 @@ const Navbar = () => {
                 size="2x"
                 />
                 </li>
-                <li className="logo">
+                <li className="logo" onClick={()=>history.push('/')}>
                     anisha
                 </li>
                 <li>
@@ -28,4 +29,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default withRouter(Navbar);

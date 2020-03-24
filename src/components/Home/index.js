@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router";
+
 import Button from "../Button";
 import ArtItem from "./components/ArtItem";
 import "./styles.css";
@@ -7,7 +9,7 @@ import translation from "../../assets/art/translation.jpeg"
 import navratri from "../../assets/art/Navratri.jpg"
 import shackles from "../../assets/art/shackles.jpg"
 
-const Home = () => {
+const Home = ({ history }) => {
   const art = [
     {
       img: translation,
@@ -32,7 +34,7 @@ const Home = () => {
       </div>
       <div className="inline">
         <Button isBig={true}>LEARN MORE</Button>
-        <Button isBig={true}>CONTACT</Button>
+        <Button isBig={true} onClick={()=> history.push('/contact')}>CONTACT</Button>
       </div>
       <div className="art">
         {art.map(({ img, price, title }) => (
@@ -43,4 +45,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
