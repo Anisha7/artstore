@@ -10,14 +10,10 @@ import navratri from "../../assets/art/Navratri.jpg";
 import shackles from "../../assets/art/shackles.jpg";
 import passion from "../../assets/art/Passion.jpg";
 import loss from "../../assets/art/Loss.jpg";
+import ganesha from "../../assets/art/ganesha.jpg";
 
 const Home = ({ history }) => {
   const art = [
-    {
-      img: translation,
-      price: "$300",
-      title: "Translation"
-    },
     {
       img: passion,
       price: "$300",
@@ -27,6 +23,16 @@ const Home = ({ history }) => {
       img: loss,
       price: "$500",
       title: "Loss"
+    },
+    {
+      img: ganesha,
+      price: "$250",
+      title: "Ganesha"
+    },
+    {
+      img: translation,
+      price: "$300",
+      title: "Translation"
     },
     {
       img: shackles,
