@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "../Button";
 import "./styles.css";
 
 const Contact = () => {
@@ -23,7 +22,7 @@ const Contact = () => {
   };
 
   const handleSubmit = event => {
-    console.log("heree")
+    console.log("heree");
     const templateId = "template_dBShjcin";
     sendFeedback(templateId, {
       message_html: message,
@@ -60,14 +59,12 @@ const Contact = () => {
           required
           value={message}
         />
-        {/* <Button isFilled={true}> */}
-          <input
-            type="button"
-            value="SUBMIT"
-            className="btn"
-            onClick={(e) => handleSubmit(e)}
-          />
-        {/* </Button> */}
+        <input
+          type="button"
+          value="SUBMIT"
+          className="btn"
+          onClick={e => handleSubmit(e)}
+        />
       </form>
     </div>
   );

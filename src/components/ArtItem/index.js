@@ -13,7 +13,7 @@ const ArtItem = ({location}) => {
   console.log(item)
   return (
     <div className="artItem">
-      <img src={item.image} alt={item.title} />
+      <img src={item.img} alt={item.title} />
       <p>{item.price}</p>
       <p>{item.title}</p>
       <p>{item.description}</p>
