@@ -7,6 +7,11 @@
     background: none;
     margin: 10px 20px 10px 0;
     font-weight: 400;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3B81A3;
 }
 
 .big {

@@ -11,19 +11,28 @@ import "./styles.css";
 const Footer = () => {
   return (
     <div className="footer">
-    <hr />
+      <hr />
       <ul>
         <li>
-          <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
+          <a href="https://www.instagram.com/almondbeans/">
+            <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
+          </a>
         </li>
         <li className="logo">
-          <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          <a href="https://www.linkedin.com/in/annysha/">
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
         </li>
         <li>
-          <FontAwesomeIcon icon={faEnvelopeSquare} size="2x" />
+          <a href="https://anishajain.herokuapp.com/">
+            <FontAwesomeIcon icon={faIdCard} size="2x" />
+          </a>
         </li>
+        {/* TODO: replace to go to CONTACT page */}
         <li>
-          <FontAwesomeIcon icon={faIdCard} size="2x" />
+          <a href="mailto:anishaj037@gmail.com">
+            <FontAwesomeIcon icon={faEnvelopeSquare} size="2x" />
+          </a>
         </li>
       </ul>
       <p>@ 2020 Anisha Jain All Rights Reserved</p>

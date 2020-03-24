@@ -28,7 +28,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="tbd"></div>
+      <div className="tbd">
+      </div>
       <div className="inline">
         <Button isBig={true}>LEARN MORE</Button>
         <Button isBig={true}>CONTACT</Button>
