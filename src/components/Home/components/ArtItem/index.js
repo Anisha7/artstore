@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import Button from "../../../Button";
+import { addItem } from './storage';
 
 import "./styles.css";
 
@@ -25,7 +26,12 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
         {sold ? (
           <Button isDisabled={true}>SOLD OUT</Button>
         ) : (
-          <Button isFilled={true}>ADD TO CART</Button>
+          <Button
+            isFilled={true}
+            onClick={() => addItem({ name: title, qty: 1, id })}
+          >
+            ADD TO CART
+          </Button>
         )}
         {/* <Button isFilled={true}>ADD TO CART</Button> */}
       </div>

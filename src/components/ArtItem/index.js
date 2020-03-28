@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Button from "../Button";
+import { addItem } from './storage';
 
 import "./styles.css";
 import { artStoreData } from "../../data";
@@ -20,7 +21,7 @@ const ArtItem = ({ location }) => {
       {item.sold ? (
         <Button isDisabled={true}>SOLD OUT</Button>
       ) : (
-        <Button isFilled={true}>ADD TO CART</Button>
+        <Button isFilled={true} onClick={() => addItem({name: item.title, qty: 1, id})}>ADD TO CART</Button>
       )}
     </div>
   );
