@@ -8,7 +8,7 @@ import { add } from '../../actions'
 import "./styles.css";
 import { artStoreData } from "../../data";
 
-const ArtItem = ({ location }) => {
+const ArtItem = ({ location , add}) => {
   const id = location.state.id;
   console.log(id);
   const item = artStoreData.filter(item => item.id === id)[0];
@@ -23,7 +23,7 @@ const ArtItem = ({ location }) => {
       {item.sold ? (
         <Button isDisabled={true}>SOLD OUT</Button>
       ) : (
-        <Button isFilled={true} onClick={() =>  this.props.add(id)}>ADD TO CART</Button>
+        <Button isFilled={true} onClick={() => add(id)}>ADD TO CART</Button>
       )}
     </div>
   );
@@ -31,6 +31,7 @@ const ArtItem = ({ location }) => {
 
 // takes state and maps it to redux
 const mapStateToProps = () => {
+  return {}
 }
 
 // map increment, decrement action objects to our component (counter reducer) and connect it to the store 

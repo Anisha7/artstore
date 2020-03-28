@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "../Button";
-import { getItems, removeItem } from "../../helpers/storage";
 import { artStoreData } from "../../data";
 import { connect } from 'react-redux'
 import { remove } from '../../actions'
@@ -8,7 +7,7 @@ import { remove } from '../../actions'
 import "./styles.css";
 
 const CartItem = ({ id, remove }) => {
-//   const [rerender, setRerender] = useState(false);
+  const [rerender, setRerender] = useState(false);
   const item = artStoreData.filter(item => item.id === id)[0];
   return (
     <div className="cartItem">
@@ -31,7 +30,10 @@ const CartItem = ({ id, remove }) => {
           <Button
             isRed={true}
             isSmall={true}
-            onClick={() => remove(id)}
+            onClick={() => {
+                remove(id)
+                setRerender(!rerender)
+                }}
           >
             REMOVE
           </Button>
@@ -40,13 +42,13 @@ const CartItem = ({ id, remove }) => {
     </div>
   );
 };
-const Cart = () => {
-  const items = this.props.cart;
+const Cart = ({cart, remove}) => {
+  const items = cart
   return (
     <div className="cart">
       <div>
         <h2>Your cart</h2>
-        {items ? items.map(id => <CartItem id={id} key={id} remove={this.props.remove} />) : null}
+        {items ? items.map(id => <CartItem id={id} key={id} remove={remove} />) : null}
       </div>
       <h2>Submit interest form</h2>
     </div>

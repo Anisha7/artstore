@@ -7,7 +7,7 @@ import { add } from '../../../../actions/'
 
 import "./styles.css";
 
-const ArtItem = ({ image, price, title, id, sold, history }) => {
+const ArtItem = ({ image, price, title, id, sold, history, add }) => {
   // console.log(id)
   return (
     <div className="artItem">
@@ -30,7 +30,7 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
         ) : (
           <Button
             isFilled={true}
-            onClick={() => this.props.add(id)}
+            onClick={() => add(id)}
           >
             ADD TO CART
           </Button>
@@ -43,6 +43,7 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
 
 // takes state and maps it to redux
 const mapStateToProps = () => {
+  return {}
 }
 
 // map increment, decrement action objects to our component (counter reducer) and connect it to the store 
