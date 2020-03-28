@@ -21,41 +21,47 @@ export const artStoreData = [
         where some parts of it are detailed and easy to understand, 
         some parts are blurred to reflect confusion, and some are 
         amidst a fog of pain. 
-    `
+    `,
+    sold: false,
   },
   {
     id: "1",
     img: loss,
     price: "$500",
     title: "Loss",
-    description: ""
+    description: "",
+    sold: true,
   },
   {
     id: "2",
     img: ganesha,
     price: "$250",
     title: "Ganesha",
-    description: ""
+    description: "",
+    sold: true,
   },
   {
     id: "3",
     img: translation,
     price: "$300",
     title: "Translation",
-    description: ""
+    description: "",
+    sold: true,
   },
   {
     id: "4",
     img: shackles,
     price: "$350",
     title: "Shackles",
-    description: ""
+    description: "",
+    sold: false,
   },
   {
     id: "5",
     img: navratri,
     price: "$250",
     title: "Navratri",
-    description: ""
+    description: "",
+    sold: true,
   }
 ];

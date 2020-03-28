@@ -2,12 +2,13 @@ import React from "react";
 
 import "./styles.css";
 
-const Button = ({ isFilled, isBig, onClick, children }) => {
+const Button = ({ isFilled, isBig, onClick, isDisabled, children }) => {
   const colorfillClass = isFilled ? "filled" : "";
   const sizeClass = isBig ? "big" : "";
+  const disabledClass = isDisabled ? "disabled" : "";
   return (
     <button
-      className={`button + ${colorfillClass} + ${sizeClass}`}
+      className={`button + ${colorfillClass} + ${sizeClass} + ${disabledClass}`}
       onClick={onClick}
     >
       {children}

@@ -19,13 +19,14 @@ const Home = ({ history }) => {
         </Button>
       </div>
       <div className="art">
-        {artStoreData.map(({ img, price, title, id }) => (
+        {artStoreData.map(({ img, price, title, id, sold}) => (
           <ArtItem
             id={id}
             key={title}
             image={img}
             price={price}
             title={title}
+            sold={sold}
           ></ArtItem>
         ))}
       </div>

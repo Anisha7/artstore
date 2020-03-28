@@ -4,7 +4,7 @@ import Button from "../../../Button";
 
 import "./styles.css";
 
-const ArtItem = ({ image, price, title, id, history }) => {
+const ArtItem = ({ image, price, title, id, sold, history }) => {
   // console.log(id)
   return (
     <div className="artItem">
@@ -12,13 +12,22 @@ const ArtItem = ({ image, price, title, id, history }) => {
       <p>{price}</p>
       <p>{title}</p>
       <div className="inline">
-          <Button 
-          onClick={() => history.push({
-                pathname: `${"/item/" + title}`,
-                state: { id: id }
-              })}
-              >LEARN MORE</Button>
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: `${"/item/" + title}`,
+              state: { id: id }
+            })
+          }
+        >
+          LEARN MORE
+        </Button>
+        {sold ? (
+          <Button isDisabled={true}>SOLD OUT</Button>
+        ) : (
           <Button isFilled={true}>ADD TO CART</Button>
+        )}
+        {/* <Button isFilled={true}>ADD TO CART</Button> */}
       </div>
     </div>
   );
