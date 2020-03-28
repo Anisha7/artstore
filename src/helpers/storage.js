@@ -5,7 +5,10 @@
 // Adds given item to storage if it isn't already there
 // otherwise, increments its quantity
 export const addItem = item => {
-    const items = getItems()
+    let items = getItems()
+    if (items === null) {
+        items = []
+    }
     let found = false
     // check if item already exists
     items.forEach(curr => {
@@ -26,7 +29,9 @@ export const addItem = item => {
 // Removes given item from storage
 export const removeItem = item => {
     const items = getItems()
-    
+    if (items === null) {
+        return
+    }
     // remove item
     items.forEach((curr, i) => {
         if (curr === item) {
@@ -42,30 +47,7 @@ export const removeItem = item => {
 // Gets items in storage and formats them to usable data
 export const getItems = () => {
     const items = localStorage.getItem('anishaartstorecart')
+    console.log(items)
+    console.log(JSON.parse(items))
     return JSON.parse(items)
 };
-
-// TODO: Test this function
-// Input: old_id, new_item = {name, qty, id}
-export const updateItem = (old_id, new_item) => {
-    // Get items from local storage
-    const items = getItems()
-    let old_index = -1
-    // Find index for item with old_id
-    for (let i = 0; i < items.length; i++) {
-        if (items[i].id === old_id) {
-            old_index = i
-            break
-        }
-    }
-    if (old_index === -1 ) {
-        // should never hit this case though logically
-        // item doesn't exist, just append
-        items.push(new_item)
-    } else {
-        // Replace with new_item
-        items[old_index] = new_item
-    }
-    // Push to local storage
-    localStorage.setItem('anishaartstorecart', decodeDataToString(items))
-}
