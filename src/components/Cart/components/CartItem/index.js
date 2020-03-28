@@ -39,3 +39,4 @@ const CartItem = ({ id, rerender }) => {
     );
   };
   
+  export default CartItem;

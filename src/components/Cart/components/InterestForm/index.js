@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
 import { artStoreData } from "../../../../data";
+
+import "./styles.css"; 
 
 const InterestForm = ({ items }) => {
     let [firstname, setFirstName] = useState("");
@@ -80,7 +81,7 @@ const InterestForm = ({ items }) => {
             required
           />
           <input
-            className="input"
+            className="input mi"
             type="text"
             value={middlename}
             placeholder="Mi."
