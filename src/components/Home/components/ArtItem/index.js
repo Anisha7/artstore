@@ -1,7 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router";
 import Button from "../../../Button";
-import { addItem } from '../../../../helpers/storage';
+// import { addItem } from '../../../../helpers/storage';
+import { connect } from 'react-redux'
+import { add } from '../../../../actions/'
 
 import "./styles.css";
 
@@ -28,7 +30,7 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
         ) : (
           <Button
             isFilled={true}
-            onClick={() => addItem({ name: title, qty: 1, id })}
+            onClick={() => this.props.add(id)}
           >
             ADD TO CART
           </Button>
@@ -39,4 +41,15 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
   );
 };
 
-export default withRouter(ArtItem);
+// takes state and maps it to redux
+const mapStateToProps = () => {
+}
+
+// map increment, decrement action objects to our component (counter reducer) and connect it to the store 
+const mapDispatchToProps = () => {
+  return {
+    add,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps())(withRouter(ArtItem));

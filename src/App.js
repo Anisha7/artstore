@@ -9,25 +9,32 @@ import ArtItem from "./components/ArtItem";
 import Cart from "./components/Cart";
 import "./App.css";
 
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducers from "./reducers/index";
+const store = createStore(reducers);
+
 const App = () => (
-  <div className="App">
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/item/:item" component={ArtItem} />
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
-  </div>
+  <Provider store={store}>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/item/:item" component={ArtItem} />
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
+  </Provider>
 );
 
 export default App;

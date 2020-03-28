@@ -13,15 +13,18 @@ const arrayStringToArray = s => {
     }
     const arr = s.split('}')
     arr.pop()
+    console.log(arr)
     const result = arr.map(item => {
         if (item[0] === ',') {
             item = item.slice(0, 1)
         }
-        if (item[item.length - 1] === ',') {
-            item = item.slice(item.length - 1, 1)
-        }
+        // if (item[item.length - 1] === ',') {
+        //     item = item.slice(0, item.length-1)
+        // }
+        console.log(item)
         return item + "}"
     })
+    console.log(result)
     return result
 };
 
