@@ -1,57 +1,6 @@
 
-// ********** Helper functions ************ //
-
-// Converts array to a string
-// that can be added to local storage
-const arrayToString = arr => arr.toString();
-
-// Converts the array disguised as
-// a string to a javascript array
-const arrayStringToArray = s => {
-    if (!s) {
-        return []
-    }
-    const arr = s.split('}')
-    arr.pop()
-    const result = arr.map(item => {
-        if (item[0] === ',') {
-            item = item.slice(0, 1)
-        }
-        if (item[item.length - 1] === ',') {
-            item = item.slice(item.length - 1, 1)
-        }
-        return item + "}"
-    })
-    return result
-};
-
-// Converts a javascript object to a string
-// that can be added to local storage
-const objectToString = obj => JSON.stringify(obj);
-
-// Converts the object disguised as
-// a string to a javascript object
-const objectStringToObject = s => {
-    return JSON.parse(s)
-};
-
-// Converts the localStorage string array of objects 
-// to a usable javascript array of javascript objects
-const parseStringData = (s) => {
-    // return JSON.parse(s)
-    const arr = arrayStringToArray(s)
-    return arr.map(objString => objectStringToObject(objString))
-}
-
-// Converts the javascript array of javascript objects
-// to a localStorage string array of string objects 
-const decodeDataToString = (data) => {
-    const arr = data.map(obj => objectToString(obj))
-    return arrayToString(arr)
-}
-
 // ********** Storage functions ************ //
-// store [{name, qty, id}]
+// store [id1, id2...]
 
 // Adds given item to storage if it isn't already there
 // otherwise, increments its quantity
@@ -60,7 +9,7 @@ export const addItem = item => {
     let found = false
     // check if item already exists
     items.forEach(curr => {
-        if (curr.id === item.id) {
+        if (curr === item) {
             found = true
             curr.qty += 1
         }
@@ -71,7 +20,7 @@ export const addItem = item => {
         items.push(item)
     }
     // update storage
-    localStorage.setItem('anishaartstorecart', decodeDataToString(items))
+    localStorage.setItem('anishaartstorecart', JSON.stringify(items))
 };
 
 // Removes given item from storage
@@ -80,10 +29,10 @@ export const removeItem = item => {
     
     // remove item
     items.forEach((curr, i) => {
-        if (curr.id === item.id) {
+        if (curr === item) {
             items.splice(i, 1) // deletes item from array
             // update storage
-            localStorage.setItem('anishaartstorecart', decodeDataToString(items))
+            localStorage.setItem('anishaartstorecart', JSON.stringify(items))
             return
         }
     });
@@ -93,7 +42,7 @@ export const removeItem = item => {
 // Gets items in storage and formats them to usable data
 export const getItems = () => {
     const items = localStorage.getItem('anishaartstorecart')
-    return parseStringData(items)
+    return JSON.parse(items)
 };
 
 // TODO: Test this function

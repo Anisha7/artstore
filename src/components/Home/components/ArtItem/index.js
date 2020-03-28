@@ -28,7 +28,7 @@ const ArtItem = ({ image, price, title, id, sold, history }) => {
         ) : (
           <Button
             isFilled={true}
-            onClick={() => addItem({ name: title, qty: 1, id })}
+            onClick={() => addItem(id)}
           >
             ADD TO CART
           </Button>

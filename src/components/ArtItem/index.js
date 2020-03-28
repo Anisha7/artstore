@@ -21,7 +21,7 @@ const ArtItem = ({ location }) => {
       {item.sold ? (
         <Button isDisabled={true}>SOLD OUT</Button>
       ) : (
-        <Button isFilled={true} onClick={() => addItem({name: item.title, qty: 1, id})}>ADD TO CART</Button>
+        <Button isFilled={true} onClick={() => addItem(id)}>ADD TO CART</Button>
       )}
     </div>
   );
