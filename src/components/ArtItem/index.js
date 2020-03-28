@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Button from "../Button";
-import { addItem } from './storage';
+import { addItem } from '../../helpers/storage';
 
 import "./styles.css";
 import { artStoreData } from "../../data";

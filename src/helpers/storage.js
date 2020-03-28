@@ -71,7 +71,7 @@ export const addItem = item => {
         items.push(item)
     }
     // update storage
-    localStorage.setItem('cart', decodeDataToString(items))
+    localStorage.setItem('anishaartstorecart', decodeDataToString(items))
 };
 
 // Removes given item from storage
@@ -83,7 +83,7 @@ export const removeItem = item => {
         if (curr.id === item.id) {
             items.splice(i, 1) // deletes item from array
             // update storage
-            localStorage.setItem('cart', decodeDataToString(items))
+            localStorage.setItem('anishaartstorecart', decodeDataToString(items))
             return
         }
     });
@@ -92,7 +92,7 @@ export const removeItem = item => {
 
 // Gets items in storage and formats them to usable data
 export const getItems = () => {
-    const items = localStorage.getItem('cart')
+    const items = localStorage.getItem('anishaartstorecart')
     return parseStringData(items)
 };
 
@@ -101,7 +101,7 @@ export const getItems = () => {
 export const updateItem = (old_id, new_item) => {
     // Get items from local storage
     const items = getItems()
-    const old_index = -1
+    let old_index = -1
     // Find index for item with old_id
     for (let i = 0; i < items.length; i++) {
         if (items[i].id === old_id) {
@@ -118,5 +118,5 @@ export const updateItem = (old_id, new_item) => {
         items[old_index] = new_item
     }
     // Push to local storage
-    localStorage.setItem('cart', decodeDataToString(items))
+    localStorage.setItem('anishaartstorecart', decodeDataToString(items))
 }

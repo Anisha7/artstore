@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import ArtItem from "./components/ArtItem";
+import Cart from "./components/Cart";
 import "./App.css";
 
 const App = () => (
@@ -20,6 +21,9 @@ const App = () => (
           <Contact />
         </Route>
         <Route exact path="/item/:item" component={ArtItem} />
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
       </Switch>
       <Footer />
     </Router>

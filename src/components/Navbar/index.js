@@ -22,6 +22,7 @@ const Navbar = ({ history }) => {
                 <FontAwesomeIcon
                 icon={ faShoppingCart }
                 size="2x"
+                onClick={()=>history.push('/cart')}
                 />
                 </li>
             </ul>
