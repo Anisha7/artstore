@@ -2,6 +2,13 @@
 // ********** Storage functions ************ //
 // store [id1, id2...]
 
+
+// Gets items in storage and formats them to usable data
+export const getItems = () => {
+    const items = localStorage.getItem('anishaartstorecart')
+    return JSON.parse(items)
+};
+
 // Adds given item to storage if it isn't already there
 // otherwise, increments its quantity
 export const addItem = item => {
@@ -42,12 +49,4 @@ export const removeItem = item => {
         }
     });
     
-};
-
-// Gets items in storage and formats them to usable data
-export const getItems = () => {
-    const items = localStorage.getItem('anishaartstorecart')
-    console.log(items)
-    console.log(JSON.parse(items))
-    return JSON.parse(items)
 };

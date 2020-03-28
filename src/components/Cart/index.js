@@ -47,7 +47,7 @@ const Cart = () => {
     <div className="cart">
       <div>
         <h2>Your cart</h2>
-        {items ? items.map(id => <CartItem id={id} key={id} rerender={() => setState({})} />) : null}
+        {items && items.length > 0 ? items.map(id => <CartItem id={id} key={id} rerender={() => setState({})} />) : "Your cart is empty"}
       </div>
       <h2>Submit interest form</h2>
     </div>
