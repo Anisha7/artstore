@@ -5,8 +5,8 @@
 
 // Gets items in storage and formats them to usable data
 export const getItems = () => {
-    const items = localStorage.getItem('anishaartstorecart')
-    return JSON.parse(items)
+    const items = JSON.parse(localStorage.getItem('anishaartstorecart'))
+    return items ? items : []
 };
 
 // Adds given item to storage if it isn't already there
