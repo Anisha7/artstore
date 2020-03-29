@@ -18,18 +18,16 @@ const InterestForm = ({ items }) => {
   
     // from items (ids), get items (objects) using artStoreData
     const order = []
+    let total = 0
     items.forEach((index) => {
       // find that id in artStoreData
       const item = artStoreData.filter(({id}) => index === id)
       if (item.length > 0) {
+        total += parseFloat(item[0].price.slice(1, item[0].price.length))
         // append object to order
-        order.push(item[0])
+        order.push(`$${item[0].price} - ${item[0].title}`)
       }
     })
-    const total = order.reduce((acc, curr) => {
-      const price = parseFloat(curr.price.slice(1, curr.price.length))
-      return acc + price
-    } , 0);
     console.log(total)
     // also get total cost of purchase
     // email this to me
@@ -50,8 +48,7 @@ const InterestForm = ({ items }) => {
   
     const handleSubmit = event => {
       console.log("heree");
-      // update with order template
-      const templateId = "template_dBShjcin";
+      const templateId = "artstore_order_dBShjcin";
       sendFeedback(templateId, {
         first_name: firstname,
         middle_name: middlename,
@@ -64,7 +61,7 @@ const InterestForm = ({ items }) => {
         country: country,
         zip: zip,
         message_html: message,
-        order: order,
+        order: JSON.stringify(order),
         total: total
       });
     }
@@ -86,7 +83,6 @@ const InterestForm = ({ items }) => {
             value={middlename}
             placeholder="Mi."
             onChange={e => setMiddleName(e.target.value)}
-            required
           />
           <input
             className="input"
