@@ -1,9 +1,10 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import Button from "../../../Button"
 import { artStoreData } from "../../../../data";
 import { removeItem } from "../../../../helpers/storage";
 
-const CartItem = ({ id, rerender }) => {
+const CartItem = ({ id, rerender, history }) => {
     const item = artStoreData.filter(item => item.id === id)[0];
     return (
       <div className="cartItem">
@@ -39,4 +40,4 @@ const CartItem = ({ id, rerender }) => {
     );
   };
   
-  export default CartItem;
+  export default withRouter(CartItem);
