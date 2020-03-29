@@ -8,6 +8,7 @@
 .interest-form .inline {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .interest-form .input {

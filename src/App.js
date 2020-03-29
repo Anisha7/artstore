@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import ArtItem from "./components/ArtItem";
 import Cart from "./components/Cart";
+import Confirmation from "./components/Confirmation";
 import "./App.css";
 
 const App = () => (
@@ -23,6 +24,9 @@ const App = () => (
         <Route exact path="/item/:item" component={ArtItem} />
         <Route exact path="/cart">
           <Cart />
+        </Route>
+        <Route exact path="/confirmation">
+          <Confirmation />
         </Route>
       </Switch>
       <Footer />
