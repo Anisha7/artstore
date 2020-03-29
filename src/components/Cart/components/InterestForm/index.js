@@ -28,7 +28,6 @@ const InterestForm = ({ items }) => {
         order.push(`$${item[0].price} - ${item[0].title}`)
       }
     })
-    console.log(total)
     // also get total cost of purchase
     // email this to me
     const sendFeedback = (templateId, variables) => {
@@ -36,6 +35,8 @@ const InterestForm = ({ items }) => {
         .send("gmail", templateId, variables)
         .then(res => {
           console.log("Email successfully sent!");
+          // redirect to confirm page
+          // clear local storage
         })
         // Handle errors here however you like, or use a React error boundary
         .catch(err =>
@@ -47,7 +48,6 @@ const InterestForm = ({ items }) => {
     };
   
     const handleSubmit = event => {
-      console.log("heree");
       const templateId = "artstore_order_dBShjcin";
       sendFeedback(templateId, {
         first_name: firstname,
