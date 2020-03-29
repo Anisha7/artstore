@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router";
 import { artStoreData } from "../../../../data";
 
 import "./styles.css"; 
 
-const InterestForm = ({ items }) => {
+const InterestForm = ({ items, history }) => {
     let [firstname, setFirstName] = useState("");
     let [middlename, setMiddleName] = useState("");
     let [lastname, setLastName] = useState("");
@@ -64,6 +65,7 @@ const InterestForm = ({ items }) => {
         order: JSON.stringify(order),
         total: total
       });
+      history.push("/confirmation")
     }
   
     return (
@@ -170,4 +172,4 @@ const InterestForm = ({ items }) => {
     );
   };
 
-  export default InterestForm;
+  export default withRouter(InterestForm);
